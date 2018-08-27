@@ -2,9 +2,6 @@
 
 get_header();
 
-$data = get_plugin_data( WP_PLUGIN_DIR . '/gutenberg/gutenberg.php' );
-$gutenberg_version = $data['Version'];
-
 ?>
 <div id="wpwrap">
 	<div id="adminmenumain" role="navigation" aria-label="Main menu">
@@ -13,8 +10,6 @@ $gutenberg_version = $data['Version'];
 		<div id="adminmenuback"></div>
 		<div id="adminmenuwrap">
 			<ul id="adminmenu">
-				<li class="wp-not-current-submenu menu-top menu-icon-performance menu-top-last" id="menu-comments">
-					<a href="#" class="wp-not-current-submenu menu-top menu-icon-performance menu-top-last"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-performance"><br></div><div class="wp-menu-name">Gutenberg v<?php echo esc_html( $gutenberg_version ); ?></div></a></li>
 				<?php
 					if ( has_nav_menu( 'sidebar' ) ) {
 						wp_nav_menu( [

@@ -96,11 +96,11 @@ function frontenberg_remove_toolbar_node($wp_admin_bar) {
 		),
 	));
 	$wp_admin_bar->add_menu( array(
-		'id'    => 'frontenderg',
-		'title' => 'Frontenberg',
+		'id'    => 'site_link',
+		'title' => get_bloginfo( 'name' ),
 		'href'  => home_url(),
 		'meta'  => array(
-			'title' => __('FrontenBerg'),            
+			'title' => get_bloginfo( 'name' ),
         ),
     ));
 	
