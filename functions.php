@@ -53,12 +53,14 @@ function frontenberg_give_permissions( $allcaps, $cap, $args ) {
 	$allcaps['edit_posts'] = true;
 	$allcaps['edit_others_posts'] = true;
 	$allcaps['edit_published_posts'] = true;
+	$allcaps['edit_page'] = true;
+	$allcaps['edit_pages'] = true;
+	$allcaps['edit_others_pages'] = true;
+	$allcaps['edit_published_pages'] = true;
 
 	// better safe than sorry
-	$allcaps['edit_pages'] = false;
 	$allcaps['switch_themes'] = false;
 	$allcaps['edit_themes'] = false;
-	$allcaps['edit_pages'] = false;
 	$allcaps['activate_plugins'] = false;
 	$allcaps['edit_plugins'] = false;
 	$allcaps['edit_users'] = false;
