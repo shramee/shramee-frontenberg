@@ -3,20 +3,22 @@
 add_action( 'init', function() {
 	add_theme_support( 'align-wide' );
 	show_admin_bar( true );
-	
-	add_action( 'wp_enqueue_scripts', function() {
-		wp_enqueue_script('postbox',admin_url("js/postbox.min.js"),array( 'jquery-ui-sortable' ),false, 1 );
-		wp_enqueue_style('dashicons');
-		wp_enqueue_style('common');
-		wp_enqueue_style('forms');
-		wp_enqueue_style('dashboard');
-		wp_enqueue_style('media');
-		wp_enqueue_style('admin-menu');
-		wp_enqueue_style('admin-bar');
-		wp_enqueue_style('nav-menus');
-		wp_enqueue_style('l10n');
-		wp_enqueue_style('buttons');
-		wp_enqueue_style('frontenberg', get_template_directory_uri() . '/style.css');
+
+	add_action( 'wp_enqueue_scripts', function () {
+		wp_enqueue_script( 'postbox', admin_url( "js/postbox.min.js" ), array( 'jquery-ui-sortable' ), false, 1 );
+		wp_enqueue_style( 'dashicons' );
+		wp_enqueue_style( 'common' );
+		wp_enqueue_style( 'forms' );
+		wp_enqueue_style( 'dashboard' );
+		wp_enqueue_style( 'media' );
+		wp_enqueue_style( 'admin-menu' );
+		wp_enqueue_style( 'admin-bar' );
+		wp_enqueue_style( 'nav-menus' );
+		wp_enqueue_style( 'l10n' );
+		wp_enqueue_style( 'buttons' );
+		wp_enqueue_style( 'frontenberg', get_template_directory_uri() . '/style.css' );
+		wp_enqueue_script( 'magnific-popup', get_template_directory_uri() . '/magnific-popup.min.js', [ 'jquery' ] );
+		wp_enqueue_script( 'frontenberg', get_template_directory_uri() . '/script.js', [ 'magnific-popup' ] );
 	} );
 	add_action( 'wp_enqueue_scripts', 'gutenberg_editor_scripts_and_styles' );
 
@@ -80,19 +82,21 @@ function frontenberg_remove_toolbar_node($wp_admin_bar) {
 	// replace 'updraft_admin_node' with your node id
 	$wp_admin_bar->remove_node('wpseo-menu');
 	$wp_admin_bar->remove_node('new-content');
+	$wp_admin_bar->remove_node('edit');
 	$wp_admin_bar->remove_node('comments');
 	$wp_admin_bar->remove_node('wp-logo');
 	$wp_admin_bar->remove_node('bar-about');
 	$wp_admin_bar->remove_node('search');
 	$wp_admin_bar->remove_node('wp-logo-external');
 	$wp_admin_bar->remove_node('about');
+
 	$wp_admin_bar->add_menu( array(
 		'id'    => 'wp-logo',
 		'title' => '<span class="ab-icon"></span>',
 		'href'  => home_url(),
         'meta'  => array(
 			'class' => 'wp-logo',
-			'title' => __('FrontenBerg'),            
+			'title' => get_bloginfo( 'name' ),
 		),
 	));
 	$wp_admin_bar->add_menu( array(

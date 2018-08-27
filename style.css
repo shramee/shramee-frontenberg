@@ -1,17 +1,2 @@
-/*
-Theme Name: Frontenberg
-Theme URI: https://tomjn.com
-Author: Tom J Nowell
-Author URI: https://tomjn.com/
-Description: Creates a site with a Gutenberg editor instance on the frontend
-Version: 1.1
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-*/
-
-.notice.notice-alt.notice-error.is-dismissible {
-    display: none;
-}
+@import url(magnific-popup.css);.notice.notice-alt.notice-error.is-dismissible,.edit-post-header__settings .editor-post-switch-to-draft,.edit-post-header__settings .editor-post-preview,.edit-post-header__settings .editor-post-publish-button{display:none !important}
+/*# sourceMappingURL=style.css.map */
